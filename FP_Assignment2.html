@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Assignment 2 - FP With Arrays</title>
+    <style>
+        #demo {
+            margin: 8px;
+            width: 350px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Click on the button to see the result</p>
+    <button onclick="myFunction()">Click Me!!</button>
+    <br>
+    <div id="demo"></div>
+    <script>
+        var numbers = [10, 8, 12, 36];
+        function double(item) {
+            return item * item;
+        }
+        function calculate(item) {
+            if (item > 20) {
+                return item;
+            }
+        }
+        function sum(total, item) {
+            return total + item;
+        }
+        function myFunction() {
+            document.getElementById("demo").innerHTML = 'The result of double value:' + numbers.map(double) + '</br>';
+            document.getElementById("demo").innerHTML += 'The result of filtered value is:' + numbers.filter(calculate) + '</br>';
+            document.getElementById("demo").innerHTML += 'The sum of filtered array is:' + numbers.reduce(sum);
+        }
+    </script>
+
+</body>
